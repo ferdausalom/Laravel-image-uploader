@@ -16,8 +16,8 @@ class ImageUploader
 
     private function makeImgName($slideName, $type, $imgParams) {
         $slideName = str_replace(' ', '-', $slideName);
-        $igmName = $slideName.'_'.time().".".$type;
-        $imgUrl  = $imgParams[1].$igmName;
+        $igmName   = $slideName.'_'.time().".".$type;
+        $imgUrl    = $imgParams[1].$igmName;
         return $imgUrl;
     }
 
