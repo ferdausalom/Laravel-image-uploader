@@ -26,7 +26,19 @@ class SlideStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name'  => 'required',
+            'image' => ['image', 'mimes:jpg,jpeg,png,gif', 'max:3072']
+        ];
+    }
+    /**
+     * Custom message for validation
+     *
+     * @return array
+    */
+    public function messages()
+    {
+        return [
+            'image.max' => 'For best result, the image may not be greater than 3 Megabytes.'
         ];
     }
     /**
@@ -34,12 +46,4 @@ class SlideStoreRequest extends FormRequest
      *
      * @return array
      */
-    // public function messages()
-    // {
-    //     return [
-    //         'smallTitle' => 'Email is required!',
-    //         'longTitle'  => 'Name is required!',
-    //         'image'      => 'Password is required!'
-    //     ];
-    // }
 }

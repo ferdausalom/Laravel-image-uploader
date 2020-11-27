@@ -6,10 +6,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 class ImageUploader
 {
     public function makeDirectory($parentDirectory, $subDirectory) {
-        if(!is_dir($parentDirectory)) {
+        if(!is_dir($parentDirectory) && $parentDirectory != '') {
             mkdir($parentDirectory);
         }
-        if (!is_dir($subDirectory)) {
+        if(!is_dir($subDirectory) && $subDirectory != '') {
             mkdir($subDirectory);
         }
     }
